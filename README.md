@@ -4,7 +4,7 @@
 
 ## 🚀 Jobbie-Clothes Resume Enhancer
 
-An AI-powered Python application that helps you tailor your resume and generate cover letters for specific job postings. This tool uses advanced AI to optimize your resume for ATS (Applicant Tracking Systems) and create compelling cover letters that make you stand out as the perfect candidate.
+A completely offline Python application that helps you tailor your resume and generate cover letters for specific job postings. This tool uses local natural language processing to optimize your resume for ATS (Applicant Tracking Systems) and create compelling cover letters that make you stand out as the perfect candidate.
 
 ### ✨ Features
 
@@ -14,6 +14,8 @@ An AI-powered Python application that helps you tailor your resume and generate 
 - **🔍 Keyword Analysis**: Extracts key terms and requirements from job descriptions
 - **📁 Multiple File Formats**: Supports PDF, DOCX, and TXT resume uploads
 - **💾 Easy Downloads**: Save your enhanced documents with one click
+- **🔒 100% Offline**: No API keys required, complete privacy protection
+- **⚡ Fast Processing**: Local NLP processing without internet dependency
 
 ### 🛠️ Installation
 
@@ -28,10 +30,10 @@ An AI-powered Python application that helps you tailor your resume and generate 
    pip install -r requirements.txt
    ```
 
-3. **Get a Claude API key:**
-   - Visit https://console.anthropic.com/
-   - Create a new API key
-   - Keep it secure - you'll enter it in the app
+3. **First-time setup:**
+   - Run the application
+   - Click "Download Language Data" in the sidebar (one-time only)
+   - You're ready to go - no API keys needed!
 
 ### 🎮 Usage
 
@@ -45,7 +47,6 @@ An AI-powered Python application that helps you tailor your resume and generate 
    ```
 
 2. **Using the app:**
-   - Enter your Claude API key in the sidebar
    - Upload your current resume (PDF, DOCX, or TXT)
    - Paste the job description you're applying for
    - Optionally add company name and position title
@@ -55,40 +56,44 @@ An AI-powered Python application that helps you tailor your resume and generate 
 ### 🔧 Requirements
 
 - Python 3.8+
-- Claude API key (Anthropic account with credits)
-- Internet connection
+- Internet connection (only for initial NLTK data download)
 
 ### 📋 Dependencies
 
 - `streamlit` - Web application framework
-- `anthropic` - Claude API client
+- `nltk` - Natural language processing
+- `scikit-learn` - Machine learning for text analysis
+- `numpy` - Numerical computing
 - `python-docx` - Microsoft Word document handling
 - `PyPDF2` - PDF file processing
 
 ### 🎯 How It Works
 
 1. **Upload Analysis**: Extracts text from your resume file
-2. **Job Parsing**: Analyzes the job description for key requirements
-3. **AI Enhancement**: Uses Claude to rewrite your resume with:
+2. **Job Parsing**: Analyzes the job description for key requirements using NLP
+3. **Local Enhancement**: Uses machine learning and NLP to rewrite your resume with:
    - Relevant keywords from the job posting
-   - Quantified achievements
-   - Industry-specific terminology
+   - Enhanced action verbs
+   - Improved keyword density
    - ATS-optimized formatting
-4. **Cover Letter Creation**: Generates a personalized cover letter that connects your experience to the job requirements
+4. **Cover Letter Creation**: Generates a personalized cover letter using template-based approach that connects your experience to the job requirements
 
 ### 🔒 Privacy & Security
 
-- Your documents are processed locally and sent only to Anthropic's Claude API
-- No data is stored permanently by the application
-- Use your own Claude API key for complete control
-- All generated content is downloaded to your local machine
+- **100% Offline Processing**: Your documents never leave your computer
+- **No API Keys Required**: No external services or accounts needed
+- **Complete Privacy**: No data is sent to any server or cloud service
+- **Local Storage Only**: All generated content stays on your local machine
+- **No Tracking**: No analytics, logging, or data collection
 
 ### 💡 Tips for Best Results
 
 - Use a well-formatted, current resume as your base
-- Provide complete job descriptions for better matching
+- Provide complete job descriptions for better keyword matching
 - Review and customize the generated content before submitting
 - Keep your original resume - this tool creates enhanced versions for specific applications
+- Download language data on first run for optimal performance
+- Ensure your resume has bullet points for better enhancement
 
 ### 🤝 Contributing
 
@@ -96,4 +101,4 @@ This is a personal project, but suggestions and improvements are welcome!
 
 ---
 
-**Ready to land your dream job? Let's get you dressed for success! 🕴️✨**
+**Ready to land your dream job? Let's get you dressed for success - completely offline! 🕴️✨**

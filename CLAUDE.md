@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Jobbie-Clothes is an AI-powered Python application that helps users tailor their resumes and generate cover letters for specific job postings. The application uses OpenAI's GPT models to optimize resumes for ATS (Applicant Tracking Systems) and create compelling, personalized cover letters.
+Jobbie-Clothes is a completely offline Python application that helps users tailor their resumes and generate cover letters for specific job postings. The application uses local natural language processing and machine learning to optimize resumes for ATS (Applicant Tracking Systems) and create compelling, personalized cover letters.
 
 ## Development Commands
 
@@ -22,7 +22,9 @@ streamlit run main.py
 ### Dependencies
 - Python 3.8+
 - Streamlit (web framework)
-- Anthropic Claude API (for AI processing)
+- NLTK (natural language processing)
+- scikit-learn (machine learning for text analysis)
+- numpy (numerical computing)
 - python-docx (Word document handling)
 - PyPDF2 (PDF processing)
 
@@ -33,8 +35,8 @@ streamlit run main.py
 1. **main.py**: Primary Streamlit application with:
    - `ResumeEnhancer` class: Core functionality for resume processing
    - File upload handling (PDF, DOCX, TXT)
-   - Claude API integration
-   - Text extraction and processing methods
+   - Local NLP processing methods
+   - Text extraction and enhancement algorithms
 
 2. **run.py**: Application launcher script for easy startup
 
@@ -42,22 +44,24 @@ streamlit run main.py
 
 ### Key Features
 
-- **Resume Enhancement**: AI-powered resume tailoring using job description analysis
+- **Resume Enhancement**: Local NLP-powered resume tailoring using job description analysis
 - **ATS Optimization**: Keyword matching and formatting for applicant tracking systems
-- **Cover Letter Generation**: Personalized cover letters based on resume and job requirements
+- **Cover Letter Generation**: Template-based personalized cover letters
 - **Multi-format Support**: Handles PDF, DOCX, and TXT file uploads
-- **Keyword Analysis**: Extracts key terms from job descriptions
+- **Keyword Analysis**: Extracts key terms from job descriptions using NLTK
+- **Complete Offline Operation**: No API keys or internet required after setup
 
-### AI Integration
+### Local Processing Architecture
 
-The application uses Anthropic's Claude models for:
-- Job description analysis and keyword extraction (Claude-3-Haiku for speed)
-- Resume content enhancement and optimization (Claude-3-Sonnet for quality)
-- Cover letter generation with role-specific customization (Claude-3-Sonnet)
+The application uses local machine learning and NLP libraries:
+- **NLTK**: For tokenization, stopword removal, and text preprocessing
+- **scikit-learn**: For TF-IDF vectorization and text similarity analysis
+- **Custom algorithms**: For keyword matching and resume enhancement
+- **Template-based generation**: For cover letter creation with dynamic content
 
 ### Security Considerations
 
-- Users provide their own Claude API keys
-- No permanent data storage
-- Local processing with API calls only for AI enhancement
-- Documents processed temporarily during session only
+- **100% Offline**: No external API calls after initial NLTK data download
+- **Complete Privacy**: No data leaves the user's machine
+- **No API Keys**: No external accounts or services required
+- **Local Storage Only**: All processing and storage happens locally

@@ -15,7 +15,7 @@ setup(
     name="jobbie-clothes",
     version="1.0.0",
     author="Jobbie-Clothes",
-    description="Claude-powered resume enhancer and cover letter generator",
+    description="Offline NLP-powered resume enhancer and cover letter generator",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
