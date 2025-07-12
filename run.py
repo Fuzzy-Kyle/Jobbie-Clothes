@@ -15,8 +15,12 @@ def main():
         script_dir = os.path.dirname(os.path.abspath(__file__))
         main_py_path = os.path.join(script_dir, "main.py")
         
-        # Run streamlit with the main.py file
-        subprocess.run([sys.executable, "-m", "streamlit", "run", main_py_path], check=True)
+        # Run streamlit with the main.py file (localhost only for security)
+        subprocess.run([
+            sys.executable, "-m", "streamlit", "run", main_py_path,
+            "--server.address", "localhost",
+            "--browser.serverAddress", "localhost"
+        ], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running the application: {e}")
         print("Make sure you have installed the requirements:")
